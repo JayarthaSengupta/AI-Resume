@@ -7,7 +7,7 @@ export default function Home() {
   const [response, setResponse] = useState("");
 
   const handleClick = async () => {
-    const res = await fetch("http://localhost:8000/echo", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/echo`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: text }),
